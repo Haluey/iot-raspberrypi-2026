@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Controller</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 360px);
+
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+
+            background-color: white;
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+
+            margin: 5px;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .on-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .off-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .sensor-btn {
+            background-color: #2196F3;
+            color: white;
+
+            margin-top: 15px;
+        }
+
+        .sensor-box {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>IoT Controller</h1>
+
+    <div class="container">
+
+    <!-- LED1 -->
+    <div class="card">
+        <h2>LED 1 Control</h2>
+
+        <p>현재 상태 : <b>{{ led1_state }}</b></p>
+
+        <form action="/led1/on" method="post">
+            <button class="on-btn" type="submit">LED1 ON</button>
+        </form>
+
+        <form action="/led1/off" method="post">
+            <button class="off-btn" type="submit">LED1 OFF</button>
+        </form>
+    </div>
+
+    <!-- LED2 -->
+    <div class="card">
+        <h2>LED 2 Control</h2>
+
+        <p>현재 상태 : <b>{{ led2_state }}</b></p>
+
+        <form action="/led2/on" method="post">
+            <button class="on-btn" type="submit">LED2 ON</button>
+        </form>
+
+        <form action="/led2/off" method="post">
+            <button class="off-btn" type="submit">LED2 OFF</button>
+        </form>
+    </div>
+
+    <!-- LED3 -->
+    <div class="card">
+        <h2>LED 3 Control</h2>
+
+        <p>현재 상태 : <b>{{ led3_state }}</b></p>
+
+        <form action="/led3/on" method="post">
+            <button class="on-btn" type="submit">LED3 ON</button>
+        </form>
+
+        <form action="/led3/off" method="post">
+            <button class="off-btn" type="submit">LED3 OFF</button>
+        </form>
+    </div>
+
+    <!-- CDS -->
+    <div class="card">
+        <h2>CDS Sensor</h2>
+
+        <div class="sensor-box">
+            밝기 값 : <b>{{ cds }}</b>
+        </div>
+
+        <form action="/" method="get">
+            <button class="sensor-btn" type="submit">Refresh</button>
+        </form>
+    </div>
+
+    <!-- Buzzer -->
+    <div class="card">
+        <h2>Buzzer Control</h2>
+
+        <p>현재 상태 : <b>{{ buzzer_state }}</b></p>
+
+        <form action="/buzzer/on" method="post">
+            <button class="on-btn" type="submit">BUZZER ON</button>
+        </form>
+
+        <form action="/buzzer/off" method="post">
+            <button class="off-btn" type="submit">BUZZER OFF</button>
+        </form>
+    </div>
+
+    <!-- Ultrasonic -->
+    <div class="card">
+        <h2>Ultrasonic Sensor</h2>
+
+        <div class="sensor-box">
+            거리 : <b>{{ distance }}</b> cm
+        </div>
+
+        <form action="/" method="get">
+            <button class="sensor-btn" type="submit">Refresh</button>
+        </form>
+    </div>
+
+    </div>
+
+</body>
+</html>

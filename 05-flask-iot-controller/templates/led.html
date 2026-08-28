@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>LED Control</title>
+</head>
+<body>
+	<h1>Flask LED 제어</h1>
+
+	<p>현재 상태: <b>{{ state }}</b></p>
+
+	<!-- 이 부분이 가장 중요 -->
+	<form action="led/on" method="post">
+		<button type="submit">LED ON</button>
+	</form>
+
+	<br>
+
+	<form action="led/off" method="post">
+		<button type="submit">LED OFF</button>
+	</form>
+</body>
+</html>

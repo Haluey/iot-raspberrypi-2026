@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Qt / C++
+*.o
+*.obj
+*.exe
+*.out
+*.pro.user
+.qmake.stash
+moc_*.cpp
+moc_*.h
+ui_*.h
+
+# Editor temporary files
+*.swp
+
+# Visual Studio Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
